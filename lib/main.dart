@@ -5,6 +5,7 @@ import 'pages/about_page.dart';
 import 'pages/contact_page.dart';
 import 'theme/app_theme.dart';
 
+// Main entry point for the Tokoku E-Commerce App
 void main() {
   runApp(const MenawarkanProdukApp());
 }
