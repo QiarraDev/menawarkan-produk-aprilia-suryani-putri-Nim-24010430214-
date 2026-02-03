@@ -27,9 +27,9 @@ jobs:
 
       - name: Build Web
         run: |
-          flutter build web --release --base-href "/menawarkan-produk/"
+          flutter build web --release --base-href "/menawarkan-produk-aprilia-suryani-putri-Nim-24010430214-/"
           # Double check if base href was replaced, if not force it
-          sed -i 's|<base href="\$FLUTTER_BASE_HREF">|<base href="/menawarkan-produk/">|g' build/web/index.html
+          sed -i 's|<base href="\$FLUTTER_BASE_HREF">|<base href="/menawarkan-produk-aprilia-suryani-putri-Nim-24010430214-/">|g' build/web/index.html
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
