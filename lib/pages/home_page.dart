@@ -9,87 +9,89 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Navbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            // Hero Section
-            Container(
-              width: double.infinity,
-              padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    AppTheme.primaryColor.withOpacity(0.1),
-                    Colors.white,
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
+      body: SelectionArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              // Hero Section
+              Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      AppTheme.primaryColor.withOpacity(0.1),
+                      Colors.white,
+                    ],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                  ),
                 ),
-              ),
-              child: Column(
-                children: [
-                  const Text(
-                    'Solusi Digital Terbaik untuk\nBisnis Anda',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: 48,
-                      fontWeight: FontWeight.bold,
-                      height: 1.2,
-                      color: AppTheme.secondaryColor,
-                    ),
-                  ),
-                  const SizedBox(height: 20),
-                  const Text(
-                    'Tampilkan produk unggulan Anda dengan tampilan profesional dan modern.',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 18, color: Colors.grey),
-                  ),
-                  const SizedBox(height: 40),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushReplacementNamed(context, '/products');
-                    },
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: AppTheme.primaryColor,
-                      foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
+                child: Column(
+                  children: [
+                    const Text(
+                      'Solusi Digital Terbaik untuk\nBisnis Anda',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontSize: 48,
+                        fontWeight: FontWeight.bold,
+                        height: 1.2,
+                        color: AppTheme.secondaryColor,
                       ),
                     ),
-                    child: const Text('Lihat Katalog Produk', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  ),
-                ],
+                    const SizedBox(height: 20),
+                    const Text(
+                      'Tampilkan produk unggulan Anda dengan tampilan profesional dan modern.',
+                      textAlign: TextAlign.center,
+                      style: TextStyle(fontSize: 18, color: Colors.grey),
+                    ),
+                    const SizedBox(height: 40),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushReplacementNamed(context, '/products');
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppTheme.primaryColor,
+                        foregroundColor: Colors.white,
+                        padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: const Text('Lihat Katalog Produk', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    ),
+                  ],
+                ),
               ),
-            ),
-
-            // Features Section
-            Padding(
-              padding: const EdgeInsets.all(60.0),
-              child: Wrap(
-                spacing: 40,
-                runSpacing: 40,
-                alignment: WrapAlignment.center,
-                children: [
-                  _featureCard(
-                    Icons.speed,
-                    'Performa Cepat',
-                    'Aplikasi responsif dan loading cepat untuk pengalaman pengguna terbaik.',
-                  ),
-                  _featureCard(
-                    Icons.security,
-                    'Aman & Terpercaya',
-                    'Integrasi pemesanan yang aman langsung ke WhatsApp atau Form.',
-                  ),
-                  _featureCard(
-                    Icons.devices,
-                    'Multi Platform',
-                    'Dapat diakses melalui browser di desktop maupun smartphone.',
-                  ),
-                ],
+        
+              // Features Section
+              Padding(
+                padding: const EdgeInsets.all(60.0),
+                child: Wrap(
+                  spacing: 40,
+                  runSpacing: 40,
+                  alignment: WrapAlignment.center,
+                  children: [
+                    _featureCard(
+                      Icons.speed,
+                      'Performa Cepat',
+                      'Aplikasi responsif dan loading cepat untuk pengalaman pengguna terbaik.',
+                    ),
+                    _featureCard(
+                      Icons.security,
+                      'Aman & Terpercaya',
+                      'Integrasi pemesanan yang aman langsung ke WhatsApp atau Form.',
+                    ),
+                    _featureCard(
+                      Icons.devices,
+                      'Multi Platform',
+                      'Dapat diakses melalui browser di desktop maupun smartphone.',
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

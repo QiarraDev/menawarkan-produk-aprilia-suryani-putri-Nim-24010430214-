@@ -9,46 +9,48 @@ class AboutPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Navbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 60),
-            Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 800),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      const Text(
-                        'Tentang Kami',
-                        style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 40),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                          'https://images.unsplash.com/photo-152207182399e-b89e7df91c62?w=1200',
-                          height: 300,
-                          width: double.infinity,
-                          fit: BoxFit.cover,
+      body: SelectionArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+              Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 800),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Column(
+                      children: [
+                        const Text(
+                          'Tentang Kami',
+                          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                         ),
-                      ),
-                      const SizedBox(height: 40),
-                      const Text(
-                        'QiarraDev adalah tim pengembang yang berdedikasi untuk membantu UMKM dan bisnis lokal beralih ke ranah digital. Kami percaya bahwa teknologi harus dapat diakses oleh semua orang dengan cara yang mudah dan efisien.',
-                        textAlign: TextAlign.justify,
-                        style: TextStyle(fontSize: 18, height: 1.6),
-                      ),
-                      const SizedBox(height: 30),
-                      _visionMissionSection(),
-                      const SizedBox(height: 60),
-                    ],
+                        const SizedBox(height: 40),
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.network(
+                            'https://images.unsplash.com/photo-152207182399e-b89e7df91c62?w=1200',
+                            height: 300,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        const SizedBox(height: 40),
+                        const Text(
+                          'Tokoku adalah tim pengembang yang berdedikasi untuk membantu UMKM dan bisnis lokal beralih ke ranah digital. Kami percaya bahwa teknologi harus dapat diakses oleh semua orang dengan cara yang mudah dan efisien.',
+                          textAlign: TextAlign.justify,
+                          style: TextStyle(fontSize: 18, height: 1.6),
+                        ),
+                        const SizedBox(height: 30),
+                        _visionMissionSection(),
+                        const SizedBox(height: 60),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

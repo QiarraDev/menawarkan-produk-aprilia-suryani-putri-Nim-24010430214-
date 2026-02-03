@@ -15,7 +15,7 @@ class MenawarkanProdukApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'QiarraDev Store - Menawarkan Produk',
+      title: 'Tokoku - Menawarkan Produk',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       initialRoute: '/',
@@ -24,10 +24,6 @@ class MenawarkanProdukApp extends StatelessWidget {
         '/products': (context) => const ProductPage(),
         '/about': (context) => const AboutPage(),
         '/contact': (context) => const ContactPage(),
-      },
-      // Handling responsiveness for different screen sizes if needed
-      builder: (context, child) {
-        return SelectionArea(child: child!);
       },
     );
   }

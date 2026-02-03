@@ -9,87 +9,89 @@ class ContactPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Navbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 60),
-            Center(
-              child: ConstrainedBox(
-                constraints: const BoxConstraints(maxWidth: 1000),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Contact Info
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            const Text(
-                              'Hubungi Kami',
-                              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                            ),
-                            const SizedBox(height: 20),
-                            const Text(
-                              'Kami siap membantu Anda memulai perjalanan digital. Silakan hubungi kami melalui saluran berikut.',
-                              style: TextStyle(fontSize: 16, color: Colors.grey),
-                            ),
-                            const SizedBox(height: 40),
-                            _contactTile(Icons.phone, 'WhatsApp', '+62 812 3456 7890'),
-                            const SizedBox(height: 20),
-                            _contactTile(Icons.email, 'Email', 'halo@qiarradev.com'),
-                            const SizedBox(height: 20),
-                            _contactTile(Icons.location_on, 'Alamat', 'Jl. Digital No. 123, Jakarta, Indonesia'),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(width: 60),
-                      // Form or Map Placeholder
-                      Expanded(
-                        child: Container(
-                          padding: const EdgeInsets.all(40),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(20),
-                            boxShadow: [
-                              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 20, offset: const Offset(0, 10))
-                            ],
-                          ),
+      body: SelectionArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 60),
+              Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1000),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        // Contact Info
+                        Expanded(
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text('Kirim Pesan Cepat', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                              const SizedBox(height: 30),
-                              _textField('Nama Anda'),
-                              const SizedBox(height: 20),
-                              _textField('Email'),
-                              const SizedBox(height: 20),
-                              _textField('Pesan', maxLines: 4),
-                              const SizedBox(height: 30),
-                              SizedBox(
-                                width: double.infinity,
-                                child: ElevatedButton(
-                                  onPressed: () {},
-                                  style: ElevatedButton.styleFrom(
-                                    backgroundColor: AppTheme.primaryColor,
-                                    foregroundColor: Colors.white,
-                                    padding: const EdgeInsets.symmetric(vertical: 20),
-                                  ),
-                                  child: const Text('Kirim Sekarang'),
-                                ),
+                              const Text(
+                                'Hubungi Kami',
+                                style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                               ),
+                              const SizedBox(height: 20),
+                              const Text(
+                                'Kami siap membantu Anda memulai perjalanan digital. Silakan hubungi kami melalui saluran berikut.',
+                                style: TextStyle(fontSize: 16, color: Colors.grey),
+                              ),
+                              const SizedBox(height: 40),
+                              _contactTile(Icons.phone, 'WhatsApp', '+62 812 3456 7890'),
+                              const SizedBox(height: 20),
+                              _contactTile(Icons.email, 'Email', 'halo@tokoku.com'),
+                              const SizedBox(height: 20),
+                              _contactTile(Icons.location_on, 'Alamat', 'Jl. Digital No. 123, Jakarta, Indonesia'),
                             ],
                           ),
                         ),
-                      ),
-                    ],
+                        const SizedBox(width: 60),
+                        // Form or Map Placeholder
+                        Expanded(
+                          child: Container(
+                            padding: const EdgeInsets.all(40),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: [
+                                BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 20, offset: const Offset(0, 10))
+                              ],
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text('Kirim Pesan Cepat', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                                const SizedBox(height: 30),
+                                _textField('Nama Anda'),
+                                const SizedBox(height: 20),
+                                _textField('Email'),
+                                const SizedBox(height: 20),
+                                _textField('Pesan', maxLines: 4),
+                                const SizedBox(height: 30),
+                                SizedBox(
+                                  width: double.infinity,
+                                  child: ElevatedButton(
+                                    onPressed: () {},
+                                    style: ElevatedButton.styleFrom(
+                                      backgroundColor: AppTheme.primaryColor,
+                                      foregroundColor: Colors.white,
+                                      padding: const EdgeInsets.symmetric(vertical: 20),
+                                    ),
+                                    child: const Text('Kirim Sekarang'),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            const SizedBox(height: 100),
-          ],
+              const SizedBox(height: 100),
+            ],
+          ),
         ),
       ),
     );

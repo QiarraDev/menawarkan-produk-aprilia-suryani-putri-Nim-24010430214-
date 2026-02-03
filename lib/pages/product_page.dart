@@ -10,37 +10,39 @@ class ProductPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const Navbar(),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            const SizedBox(height: 40),
-            const Text(
-              'Katalog Produk',
-              style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
-            ),
-            const SizedBox(height: 10),
-            const Text('Pilih produk yang sesuai dengan kebutuhan Anda'),
-            const SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 40),
-              child: GridView.builder(
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 350,
-                  mainAxisSpacing: 30,
-                  crossAxisSpacing: 30,
-                  childAspectRatio: 0.8,
-                ),
-                itemCount: mockProducts.length,
-                itemBuilder: (context, index) {
-                  final product = mockProducts[index];
-                  return _productCard(context, product);
-                },
+      body: SelectionArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              const SizedBox(height: 40),
+              const Text(
+                'Katalog Produk',
+                style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
               ),
-            ),
-            const SizedBox(height: 60),
-          ],
+              const SizedBox(height: 10),
+              const Text('Pilih produk yang sesuai dengan kebutuhan Anda'),
+              const SizedBox(height: 40),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 40),
+                child: GridView.builder(
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+                    maxCrossAxisExtent: 350,
+                    mainAxisSpacing: 30,
+                    crossAxisSpacing: 30,
+                    childAspectRatio: 0.8,
+                  ),
+                  itemCount: mockProducts.length,
+                  itemBuilder: (context, index) {
+                    final product = mockProducts[index];
+                    return _productCard(context, product);
+                  },
+                ),
+              ),
+              const SizedBox(height: 60),
+            ],
+          ),
         ),
       ),
     );
@@ -135,7 +137,6 @@ class ProductPage extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              // Simulated link opening
               Navigator.pop(context);
             },
             style: ElevatedButton.styleFrom(backgroundColor: AppTheme.primaryColor, foregroundColor: Colors.white),

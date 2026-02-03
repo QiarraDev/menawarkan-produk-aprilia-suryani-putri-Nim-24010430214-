@@ -12,7 +12,7 @@ class Navbar extends StatelessWidget implements PreferredSizeWidget {
           const Icon(Icons.shopping_bag, color: AppTheme.primaryColor, size: 30),
           const SizedBox(width: 10),
           Text(
-            'QiarraDev Store',
+            'Tokoku',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               color: AppTheme.secondaryColor,
